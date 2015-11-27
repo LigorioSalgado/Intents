@@ -56,7 +56,7 @@ public class ContactPageActivity extends AppCompatActivity implements View.OnCli
             case R.id.contactPhone:
                 Intent i = new Intent();
                 i.putExtra("value",contactObject.getPhone());
-                setResult(PHONE,i);
+                setResult(PHONE,i);//Envia los datos de respuesta al activity que lo llamo
                 finish();
                 break;
              case R.id.contactWebsite:

@@ -56,6 +56,7 @@ public class ContentIntentActivity extends AppCompatActivity {
         intentListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                //llama a un activity y espera una respuesta del mismo
                 Intent i = new Intent(ContentIntentActivity.this, ContactPageActivity.class);
                 i.putExtra("Object", contactList.get(position));
                 startActivityForResult(i, 0);
@@ -74,7 +75,7 @@ public class ContentIntentActivity extends AppCompatActivity {
     }
 
     @Override
-    protected void onActivityResult(int requestCode, int resultcode, Intent data) {
+    protected void onActivityResult(int requestCode, int resultcode, Intent data) {// despues del setResult()  se llama a esta funcion para hacer  "algo" con la respuesta del activity
         if (data == null) {
             return;
         }
